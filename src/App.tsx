@@ -1,6 +1,6 @@
 import React, { createContext } from "react";
 import { ChakraProvider } from "@chakra-ui/react";
-import Top from "./components/pages/Top";
+import { Top } from "./components/pages/Top";
 import { theme } from "./theme/theme";
 
 const initialMyContext = {
