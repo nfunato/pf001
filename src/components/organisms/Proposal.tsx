@@ -1,6 +1,6 @@
 import React from "react";
 import { Center, Text } from "@chakra-ui/react";
-import { VStack, Image } from "@chakra-ui/react";
+import { VStack, Image, Tooltip } from "@chakra-ui/react";
 import { ptProposal, pbImage } from "../pages/Top";
 
 type Props = {
@@ -9,17 +9,20 @@ type Props = {
 
 export function Proposal(props: Props) {
   const { tag } = props;
+  // src="https://source.unsplash.com/random"
   return (
     <Center className={tag}>
       <VStack mt={ptProposal}>
         <Text>ご提案</Text>
-        <Image
-          boxSize="160px"
-          src="https://source.unsplash.com/random"
-          alt="random image"
-          m="auto"
-          pb={pbImage}
-        />
+        <Tooltip label="Placeholder Image" bg="red.600">
+          <Image
+            boxSize="160px"
+            src="https://images.unsplash.com/photo-1542361345-89e58247f2d5?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2670&amp;q=80"
+            alt="specific image"
+            m="auto"
+            pb={pbImage}
+          />
+        </Tooltip>
       </VStack>
     </Center>
   );

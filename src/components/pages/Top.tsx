@@ -1,6 +1,7 @@
 import React from "react";
 import {
   Heading,
+  Image,
   Box,
   Flex,
   // Container,
@@ -29,11 +30,11 @@ type ScrollTarget =
   | "TRecruitment"
   | "TContact";
 
-// They should be moved to Theme?
+// Later they should be merged into src/theme/theme.ts
 export const ptProposal = "30px";
 export const pbImage = "7px";
 const stickyBarHeight = "25px";
-const fontSz = 16; // 16px (no unit means px)
+export const fontSz = 16; // 16px (no unit means px)
 const buttonH = "26px"; // no unit means x theme, which means x/4 rem by default (== 6x/4 px)
 const stickyBarOffset = -42;
 const divColor = "blackAlpha.200";
@@ -49,43 +50,66 @@ const scrollToBox = (cssCls: ScrollTarget) => () =>
 export function Top() {
   return (
     <VStack>
-      <Heading
+      <Box
+        as="header"
         position="fixed"
         h={stickyBarHeight + 2}
         w="100%"
         bgColor="white"
+        zIndex={"sticky"}
       >
         <HStack>
-          <Text pt="10px" pl="10px" fontSize={fontSz + 2} w="90%">
+          <Image src="./abccorp.png" />
+          <Text
+            pt="10px"
+            pl="10px"
+            fontSize={fontSz + 2}
+            fontWeight="bolder"
+            w="90%"
+          >
             ABC株式会社
           </Text>
           <Flex pt="10px" pr="10px" justifyContent={"flex-end"} w="90%">
             <HStack spacing={1}>
               <PrimaryButton onClick={scrollToBox("TProposal")} h={buttonH}>
-                <Text fontSize={fontSz}>ご提案</Text>
+                <Heading fontSize={fontSz} fontWeight="bolder">
+                  ご提案
+                </Heading>
               </PrimaryButton>
               <PrimaryButton onClick={scrollToBox("TService")} h={buttonH}>
-                <Text fontSize={fontSz}>サービス</Text>
+                <Heading fontSize={fontSz} fontWeight="bolder">
+                  サービス
+                </Heading>
               </PrimaryButton>
               <PrimaryButton onClick={scrollToBox("TBlog")} h={buttonH}>
-                <Text fontSize={fontSz}>ブログ</Text>
+                <Heading fontSize={fontSz} fontWeight="bolder">
+                  ブログ
+                </Heading>
               </PrimaryButton>
               <PrimaryButton onClick={scrollToBox("TCompany")} h={buttonH}>
-                <Text fontSize={fontSz}>会社概要</Text>
+                <Heading fontSize={fontSz} fontWeight="bolder">
+                  会社概要
+                </Heading>
               </PrimaryButton>
               <PrimaryButton onClick={scrollToBox("TAccess")} h={buttonH}>
-                <Text fontSize={fontSz}>アクセス</Text>
+                <Heading fontSize={fontSz} fontWeight="bolder">
+                  アクセス
+                </Heading>
               </PrimaryButton>
               <PrimaryButton onClick={scrollToBox("TRecruitment")} h={buttonH}>
-                <Text fontSize={fontSz}>採用情報</Text>
+                <Heading fontSize={fontSz} fontWeight="bolder">
+                  採用情報
+                </Heading>
               </PrimaryButton>
               <PrimaryButton onClick={scrollToBox("TContact")} h={buttonH}>
-                <Text fontSize={fontSz}>お問い合わせ</Text>
+                <Heading fontSize={fontSz} fontWeight="bolder">
+                  お問い合わせ
+                </Heading>
               </PrimaryButton>
             </HStack>
           </Flex>
         </HStack>
-      </Heading>
+      </Box>
       <Box as="main" mt={stickyBarHeight} w="100%">
         <Divider borderColor="transparent" borderWidth="3px" />
         <Proposal tag="TProposal" />
