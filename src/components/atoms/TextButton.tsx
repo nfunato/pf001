@@ -19,8 +19,7 @@ export const TextButton: FC<Props> = (props) => {
     h,
     onClick,
     // fontsize = 16,
-    // fontSize = 16,
-    fontSize = "md",
+    fontSize = "md", // "md", "sm",
     isDisabled = false,
     isLoading = false
   } = props;
@@ -34,7 +33,7 @@ export const TextButton: FC<Props> = (props) => {
       //    size={size}
       isDisabled={isDisabled || isLoading}
       isLoading={isLoading}
-      _hover={{ opacity: 0.8 }}
+      _hover={{ bg: "teal.100", opacity: 0.8 }}
       onClick={onClick}
     >
       <Text fontSize={fontSize} fontWeight="medium">

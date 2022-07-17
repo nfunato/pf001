@@ -12,11 +12,11 @@ import { Footer } from "../organisms/Footer";
 import { scroller } from "react-scroll";
 
 // temorary definition
-export const pbImage = "7px";
+export const pbImage = "7px"; // padding-bottom for Image
 // const fontSz = 16; // 16px (no unit means px)
 
 // Perhaps they should be merged into src/theme/theme.ts later
-const bh = "26px"; // button height
+const bh = "26px"; // button-height
 const stickyBarHeight = "30px";
 const stickyBarOffset = -33; // no unit, but in px ( stickyBarHeight + borderWidth_of_Line)
 

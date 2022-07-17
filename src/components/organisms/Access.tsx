@@ -54,11 +54,11 @@ export function Access(props: Props) {
           </ListItem>
           <ListItem>
             <ListIcon as={FaPhone} />
-            TEL: 06-6315-1234
+            TEL: 06-0123-4567
           </ListItem>
           <ListItem>
             <ListIcon as={FaFax} />
-            FAX: 06-6361-7841
+            FAX: 06-9876-5432
           </ListItem>
           <ListItem>
             <ListIcon as={FaSubway} />
