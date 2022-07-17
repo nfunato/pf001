@@ -1,9 +1,10 @@
 import React from "react";
-import { Center, Text } from "@chakra-ui/react";
+import { Heading, Center, Text } from "@chakra-ui/react";
 import { VStack, Image, Tooltip } from "@chakra-ui/react";
-import { ptProposal, pbImage } from "../pages/Top";
+import { pbImage } from "../pages/Top";
 
 type Props = {
+  // mt: string;
   tag: string;
 };
 
@@ -12,8 +13,10 @@ export function Proposal(props: Props) {
   // src="https://source.unsplash.com/random"
   return (
     <Center className={tag}>
-      <VStack mt={ptProposal}>
-        <Text>ご提案</Text>
+      <VStack mt="17px">
+        <Heading mt={2} fontSize="md">
+          ご提案
+        </Heading>
         <Tooltip label="Placeholder Image" bg="red.600">
           <Image
             boxSize="160px"

@@ -1,5 +1,21 @@
 import React from "react";
-import { Center, Text, Box, VStack } from "@chakra-ui/react";
+import {
+  Heading,
+  Center,
+  Box,
+  VStack,
+  Spacer,
+  List,
+  ListIcon,
+  ListItem
+} from "@chakra-ui/react";
+import {
+  FaAddressCard,
+  FaPhone,
+  FaFax,
+  FaSubway,
+  FaTrain
+} from "react-icons/fa";
 
 // eslint-disable-next-line
 // import { AspectRatioBox } from "@chakra-ui/core";
@@ -14,17 +30,56 @@ export function Access(props: Props) {
   // AspectRatioBox doesn't work!
   // (probably documentation, https://v0.chakra-ui.com/aspectratiobox, seems to be old)
   return (
-    <Center>
-      <VStack className={tag} w="60%">
-        <Text textAlign="center">アクセス</Text>
-        <Box
-          as="iframe"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3280.1393597776296!2d135.49754235057506!3d34.701664790578675!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6000e6932e4125ad%3A0xeefc89f1513b3179!2s2-ch%C5%8Dme-16-14%20Sonezaki%2C%20Kita%20Ward%2C%20Osaka%2C%20530-0057!5e0!3m2!1sen!2sjp!4v1657643969791!5m2!1sen!2sjp"
-          width="100%"
-          height="200"
-          loading="lazy"
-          allow="fullscreen"
-        />
+    <Box w="100%">
+      <Center>
+        <VStack className={tag} w="70%">
+          <Heading m={2} fontSize="md">
+            アクセス
+          </Heading>
+          <Box
+            as="iframe"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3280.1393597776296!2d135.49754235057506!3d34.701664790578675!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6000e6932e4125ad%3A0xeefc89f1513b3179!2s2-ch%C5%8Dme-16-14%20Sonezaki%2C%20Kita%20Ward%2C%20Osaka%2C%20530-0057!5e0!3m2!1sen!2sjp!4v1657643969791!5m2!1sen!2sjp"
+            width="100%"
+            height="200"
+            loading="lazy"
+            allow="fullscreen"
+          />
+        </VStack>
+      </Center>
+      <VStack w="60%">
+        <List>
+          <ListItem>
+            <ListIcon as={FaAddressCard} />
+            〒532-0011　大阪府大阪市北区曽根崎2-16-14
+          </ListItem>
+          <ListItem>
+            <ListIcon as={FaPhone} />
+            TEL: 06-6315-1234
+          </ListItem>
+          <ListItem>
+            <ListIcon as={FaFax} />
+            FAX: 06-6361-7841
+          </ListItem>
+          <ListItem>
+            <ListIcon as={FaSubway} />
+            大阪メトロ御堂筋線　梅田駅12番出口から徒歩3分
+          </ListItem>
+          <ListItem>
+            <ListIcon as={FaTrain} />
+            阪神電鉄梅田駅　阪神航空口から徒歩3分
+          </ListItem>
+          <ListItem>
+            <ListIcon as={FaTrain} />
+            JR大阪駅　御堂筋口から徒歩5分
+          </ListItem>
+        </List>
+        <Spacer />
+      </VStack>
+    </Box>
+  );
+}
+
+/*
         <Box>
           <Text textAlign="left">
             〒532-0011　大阪府大阪市北区曽根崎2-16-14
@@ -38,7 +93,4 @@ export function Access(props: Props) {
           <Text textAlign="left">JR大阪駅　御堂筋口から徒歩5分</Text>
           <br />
         </Box>
-      </VStack>
-    </Center>
-  );
-}
+*/

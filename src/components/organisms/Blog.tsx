@@ -1,5 +1,5 @@
 import React from "react";
-import { Center, Text } from "@chakra-ui/react";
+import { Center, Heading } from "@chakra-ui/react";
 import { VStack, Image } from "@chakra-ui/react";
 import { pbImage } from "../pages/Top";
 
@@ -12,7 +12,9 @@ export function Blog(props: Props) {
   return (
     <Center className={tag}>
       <VStack>
-        <Text>ブログ</Text>
+        <Heading mt={2} fontSize="md">
+          ブログ
+        </Heading>
         <Image
           boxSize="160px"
           src="https://source.unsplash.com/random"

@@ -1,5 +1,5 @@
 import React from "react";
-import { Center, Text } from "@chakra-ui/react";
+import { Center, Heading } from "@chakra-ui/react";
 import {
   VStack
   //  Image
@@ -15,22 +15,24 @@ import {
   // TableCaption,
   TableContainer
 } from "@chakra-ui/react";
-import { fontSz } from "../pages/Top";
-
-// import { pbImage } from "../pages/Top";
 
 type Props = {
   tag: string;
 };
 
+const fontSz = 16;
+
+// try Th's padding=0 rather than Table's size="sm" or ???'s spacing
 export function Company(props: Props) {
   const { tag } = props;
   return (
     <Center className={tag}>
       <VStack>
-        <Text>会社概要</Text>
+        <Heading mt={2} fontSize="md">
+          会社概要
+        </Heading>
         <TableContainer>
-          <Table variant="unstyled">
+          <Table variant="unstyled" size="sm">
             <Tr>
               <Th fontSize={fontSz}>社名</Th>
               <Td fontSize={fontSz}>ABC株式会社</Td>
