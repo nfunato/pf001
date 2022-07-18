@@ -16,7 +16,6 @@ import React, { ReactNode } from "react";
 import {
   Image,
   Box,
-  VStack,
   Container,
   Link,
   SimpleGrid,

@@ -1,7 +1,7 @@
 import React from "react";
 import { Center, Heading } from "@chakra-ui/react";
 import { VStack, Image } from "@chakra-ui/react";
-import { pbImage } from "../pages/Top";
+import { hfs, pbImage } from "../pages/Top";
 
 type Props = {
   tag: string;
@@ -12,7 +12,7 @@ export function Recruit(props: Props) {
   return (
     <Center className={tag}>
       <VStack>
-        <Heading mt={2} fontSize="md">
+        <Heading mt={2} fontSize={hfs}>
           採用情報
         </Heading>
         <Image

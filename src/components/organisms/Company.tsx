@@ -15,6 +15,7 @@ import {
   // TableCaption,
   TableContainer
 } from "@chakra-ui/react";
+import { hfs } from "../pages/Top";
 
 type Props = {
   tag: string;
@@ -28,7 +29,7 @@ export function Company(props: Props) {
   return (
     <Center className={tag}>
       <VStack>
-        <Heading mt={2} fontSize="md">
+        <Heading mt={2} fontSize={hfs}>
           会社概要
         </Heading>
         <TableContainer>

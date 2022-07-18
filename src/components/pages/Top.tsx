@@ -1,5 +1,18 @@
-import React from "react";
+import React, { memo, useCallback, FC } from "react";
 import { Image, Box, Flex, HStack, VStack, Divider } from "@chakra-ui/react";
+import {
+  Button,
+  Input,
+  Drawer,
+  DrawerBody,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerOverlay,
+  DrawerContent,
+  DrawerCloseButton,
+  useDisclosure
+} from "@chakra-ui/react";
+
 import { TextButton } from "../atoms/TextButton";
 import { Proposal } from "../organisms/Proposal";
 import { Service } from "../organisms/Service";
@@ -16,11 +29,10 @@ export const pbImage = "7px"; // padding-bottom for Image
 // const fontSz = 16; // 16px (no unit means px)
 
 // Perhaps they should be merged into src/theme/theme.ts later
+export const hfs = "xl"; // Heading fontSize
 const bh = "26px"; // button-height
 const stickyBarHeight = "30px";
 const stickyBarOffset = -33; // no unit, but in px ( stickyBarHeight + borderWidth_of_Line)
-
-const Line = () => <Divider borderColor="blackAlpha.300" borderWidth="3px" />;
 
 type moveTarget =
   | "Proposal"
@@ -39,7 +51,9 @@ const moveTo = (cssCls: moveTarget) => () =>
     offset: stickyBarOffset
   });
 
-export function Top() {
+export const Top = memo(() => {
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const Line = () => <Divider borderColor="blackAlpha.300" borderWidth="3px" />;
   return (
     <VStack>
       <Box
@@ -78,10 +92,38 @@ export function Top() {
         <Line />
         <Recruit tag="Recruit" />
         <Line />
-        <Contact tag="Contact" />
+        <Contact
+          tag="Contact"
+          isOpen={isOpen}
+          onOpen={onOpen}
+          onClose={onClose}
+        />
+        {/*
+        <Drawer
+          isOpen={isOpen}
+          size="full"
+          placement="bottom"
+          onClose={onClose}
+        >
+          <DrawerOverlay />
+          <DrawerContent>
+            <DrawerCloseButton />
+            <DrawerHeader>Create your account</DrawerHeader>
+            <DrawerBody>
+              <Input placeholder="Type here..." />
+            </DrawerBody>
+            <DrawerFooter>
+              <Button variant="outline" mr={3} onClick={onClose}>
+                Cancel
+              </Button>
+              <Button colorScheme="blue">Save</Button>
+            </DrawerFooter>
+          </DrawerContent>
+        </Drawer>
+  */}
         <Line />
         <Footer />
       </Box>
     </VStack>
   );
-}
+});
