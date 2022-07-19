@@ -7,33 +7,50 @@ import {
   Text,
   //Spacer,
   //Image,
-  Input,
-  Button,
-  Drawer,
-  DrawerBody,
-  DrawerFooter,
-  DrawerHeader,
-  DrawerOverlay,
-  DrawerContent,
-  DrawerCloseButton
+  Button
+  //Input,
+  //Drawer,
+  //DrawerBody,
+  //DrawerFooter,
+  //DrawerHeader,
+  //DrawerOverlay,
+  //DrawerContent,
+  //DrawerCloseButton
   //useDisclosure
 } from "@chakra-ui/react";
-import { Inquiry } from "../organisms/Inquiry";
-import { TextButton } from "../atoms/TextButton";
+//import { Inquiry } from "../pages/Inquiry";
+//import { TextButton } from "../atoms/TextButton";
 import { hfs } from "../pages/Top";
+import { Link as RouteLink } from "react-router-dom";
 
 type Props = {
   tag: string;
-  isOpen: boolean;
-  onOpen: () => void;
-  onClose: () => void;
+  //onClick: () => void;
+
+  //isOpen: boolean;
+  //onOpen: () => void;
+  //onClose: () => void;
 };
 
 // const bgImgSrc = "../../../public/images/grant-ritchie-FBkrQhnLQoY-unsplash.jpg";
 // const bgImgSrc = "./grant-ritchie-FBkrQhnLQoY-unsplash.jpg";
 
 export const Contact: FC<Props> = (props: Props) => {
-  const { tag, isOpen, onOpen, onClose } = props;
+  //const { tag, isOpen, onOpen, onClose } = props;
+  const { tag } = props;
+
+  type NavTextProps = { children: React.ReactNode };
+  const NavText: FC<NavTextProps> = (props) => {
+    const { children } = props;
+    return (
+      <RouteLink to="/inquiry">
+        <Text fontSize="lg" fontWeight="semibold">
+          {children}
+        </Text>
+      </RouteLink>
+    );
+  };
+
   return (
     <Box
       className={tag}
@@ -78,14 +95,13 @@ export const Contact: FC<Props> = (props: Props) => {
             isDisabled={false}
             isLoading={false}
             _hover={{ bg: "blue.200", opacity: 0.8 }}
-            onClick={onOpen}
+            onClick={() => {}}
             fontSize="md"
             fontWeight="medium"
           >
-            <Text fontSize="lg" fontWeight="semibold">
-              "お問合せフォーム"
-            </Text>
+            <NavText>お問合せフォーム</NavText>
           </Button>
+          {/*
           <Drawer
             isOpen={isOpen}
             size="full"
@@ -107,6 +123,7 @@ export const Contact: FC<Props> = (props: Props) => {
               </DrawerFooter>
             </DrawerContent>
           </Drawer>
+         */}
         </VStack>
       </VStack>
     </Box>

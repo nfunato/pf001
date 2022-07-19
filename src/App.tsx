@@ -1,20 +1,18 @@
-import React, { createContext } from "react";
+import React from "react";
 import { ChakraProvider } from "@chakra-ui/react";
-import { Top } from "./components/pages/Top";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 import { theme } from "./theme/theme";
-// import { Inquiry } from "./components/organisms/Inquiry";
-
-const initialMyContext = {
-  nfPlaceHolder: null
-};
-
-export const MyContext = createContext(initialMyContext);
+import { Top } from "./components/pages/Top";
+import { Inquiry } from "./components/pages/Inquiry";
 
 export const App = () => (
   <ChakraProvider theme={theme}>
-    <MyContext.Provider value={initialMyContext}>
-      <Top />
-      {/* <Inquiry /> */}
-    </MyContext.Provider>
+    {/* <Inquiry /> */}
+    <BrowserRouter>
+      <Switch>
+        <Route path="/" exact component={Top} />
+        <Route path="/inquiry" exact component={Inquiry} />
+      </Switch>
+    </BrowserRouter>
   </ChakraProvider>
 );

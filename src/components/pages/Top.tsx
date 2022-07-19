@@ -23,6 +23,7 @@ import { Recruit } from "../organisms/Recruit";
 import { Contact } from "../organisms/Contact";
 import { Footer } from "../organisms/Footer";
 import { scroller } from "react-scroll";
+import { useHistory } from "react-router-dom";
 
 // temorary definition
 export const pbImage = "7px"; // padding-bottom for Image
@@ -51,8 +52,16 @@ const moveTo = (cssCls: moveTarget) => () =>
     offset: stickyBarOffset
   });
 
-export const Top = memo(() => {
-  const { isOpen, onOpen, onClose } = useDisclosure();
+export const Top = () => {
+  /*
+  // const { isOpen, onOpen, onClose } = useDisclosure();
+  const isOpen = false;
+  const onOpen = () => {};
+  const onClose = () => {};
+  */
+  //const history = useHistory();
+  //const onClickInquiry = () => history.push("/inquiry");
+
   const Line = () => <Divider borderColor="blackAlpha.300" borderWidth="3px" />;
   return (
     <VStack>
@@ -92,12 +101,16 @@ export const Top = memo(() => {
         <Line />
         <Recruit tag="Recruit" />
         <Line />
+        <Contact tag="Contact" />
+        {/* <Contact tag="Contact" onClick={onClickInquiry} /> */}
+        {/*
         <Contact
           tag="Contact"
           isOpen={isOpen}
           onOpen={onOpen}
           onClose={onClose}
         />
+        */}
         {/*
         <Drawer
           isOpen={isOpen}
@@ -126,4 +139,4 @@ export const Top = memo(() => {
       </Box>
     </VStack>
   );
-});
+};

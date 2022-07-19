@@ -47,7 +47,7 @@ type FormInput = {
   contents: string;
 };
 
-export function Inquiry() {
+export const Inquiry: FC = () => {
   const Mandatory: FC = () => (
     <Text as="span" color="red">
       *
@@ -272,4 +272,4 @@ export function Inquiry() {
       </Box>
     </form>
   );
-}
+};
