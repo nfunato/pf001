@@ -1,17 +1,5 @@
 import React, { memo, useCallback, FC } from "react";
 import { Image, Box, Flex, HStack, VStack, Divider } from "@chakra-ui/react";
-import {
-  Button,
-  Input,
-  Drawer,
-  DrawerBody,
-  DrawerFooter,
-  DrawerHeader,
-  DrawerOverlay,
-  DrawerContent,
-  DrawerCloseButton,
-  useDisclosure
-} from "@chakra-ui/react";
 
 import { TextButton } from "../atoms/TextButton";
 import { Proposal } from "../organisms/Proposal";
@@ -23,7 +11,6 @@ import { Recruit } from "../organisms/Recruit";
 import { Contact } from "../organisms/Contact";
 import { Footer } from "../organisms/Footer";
 import { scroller } from "react-scroll";
-import { useHistory } from "react-router-dom";
 
 // temorary definition
 export const pbImage = "7px"; // padding-bottom for Image
@@ -53,15 +40,6 @@ const moveTo = (cssCls: moveTarget) => () =>
   });
 
 export const Top = () => {
-  /*
-  // const { isOpen, onOpen, onClose } = useDisclosure();
-  const isOpen = false;
-  const onOpen = () => {};
-  const onClose = () => {};
-  */
-  //const history = useHistory();
-  //const onClickInquiry = () => history.push("/inquiry");
-
   const Line = () => <Divider borderColor="blackAlpha.300" borderWidth="3px" />;
   return (
     <VStack>
@@ -102,38 +80,6 @@ export const Top = () => {
         <Recruit tag="Recruit" />
         <Line />
         <Contact tag="Contact" />
-        {/* <Contact tag="Contact" onClick={onClickInquiry} /> */}
-        {/*
-        <Contact
-          tag="Contact"
-          isOpen={isOpen}
-          onOpen={onOpen}
-          onClose={onClose}
-        />
-        */}
-        {/*
-        <Drawer
-          isOpen={isOpen}
-          size="full"
-          placement="bottom"
-          onClose={onClose}
-        >
-          <DrawerOverlay />
-          <DrawerContent>
-            <DrawerCloseButton />
-            <DrawerHeader>Create your account</DrawerHeader>
-            <DrawerBody>
-              <Input placeholder="Type here..." />
-            </DrawerBody>
-            <DrawerFooter>
-              <Button variant="outline" mr={3} onClick={onClose}>
-                Cancel
-              </Button>
-              <Button colorScheme="blue">Save</Button>
-            </DrawerFooter>
-          </DrawerContent>
-        </Drawer>
-  */}
         <Line />
         <Footer />
       </Box>

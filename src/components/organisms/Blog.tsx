@@ -1,6 +1,5 @@
 import React from "react";
-import { Center, Heading } from "@chakra-ui/react";
-import { VStack, Image } from "@chakra-ui/react";
+import { VStack, Center, Heading, Image } from "@chakra-ui/react";
 import { hfs, pbImage } from "../pages/Top";
 
 type Props = {

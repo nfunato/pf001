@@ -3,7 +3,6 @@ import {
   Heading,
   Center,
   Box,
-  //Flex,
   VStack,
   Spacer,
   List,
@@ -19,16 +18,12 @@ import {
 } from "react-icons/fa";
 import { hfs } from "../pages/Top";
 
-// eslint-disable-next-line
-// import { AspectRatioBox } from "@chakra-ui/core";
-
 type Props = {
   tag: string;
 };
 
 export function Access(props: Props) {
   const { tag } = props;
-  // zIndex={5000}
   // AspectRatioBox doesn't work!
   // (probably documentation, https://v0.chakra-ui.com/aspectratiobox, seems to be old)
   return (
@@ -82,19 +77,3 @@ export function Access(props: Props) {
     </Box>
   );
 }
-
-/*
-        <Box>
-          <Text textAlign="left">
-            〒532-0011　大阪府大阪市北区曽根崎2-16-14
-          </Text>
-          <Text textAlign="left">TEL: 06-6315-1234</Text>
-          <Text textAlign="left">FAX: 06-6361-7841</Text>
-          <Text textAlign="left">
-            大阪メトロ御堂筋線　梅田駅12番出口から徒歩3分
-          </Text>
-          <Text textAlign="left">阪神電鉄梅田駅　阪神航空口から徒歩3分</Text>
-          <Text textAlign="left">JR大阪駅　御堂筋口から徒歩5分</Text>
-          <br />
-        </Box>
-*/

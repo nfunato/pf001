@@ -1,42 +1,13 @@
 import React, { FC } from "react";
-import {
-  Box,
-  //Flex,
-  VStack,
-  Heading,
-  Text,
-  //Spacer,
-  //Image,
-  Button
-  //Input,
-  //Drawer,
-  //DrawerBody,
-  //DrawerFooter,
-  //DrawerHeader,
-  //DrawerOverlay,
-  //DrawerContent,
-  //DrawerCloseButton
-  //useDisclosure
-} from "@chakra-ui/react";
-//import { Inquiry } from "../pages/Inquiry";
-//import { TextButton } from "../atoms/TextButton";
+import { Box, VStack, Heading, Text, Button } from "@chakra-ui/react";
 import { hfs } from "../pages/Top";
 import { Link as RouteLink } from "react-router-dom";
 
 type Props = {
   tag: string;
-  //onClick: () => void;
-
-  //isOpen: boolean;
-  //onOpen: () => void;
-  //onClose: () => void;
 };
 
-// const bgImgSrc = "../../../public/images/grant-ritchie-FBkrQhnLQoY-unsplash.jpg";
-// const bgImgSrc = "./grant-ritchie-FBkrQhnLQoY-unsplash.jpg";
-
 export const Contact: FC<Props> = (props: Props) => {
-  //const { tag, isOpen, onOpen, onClose } = props;
   const { tag } = props;
 
   type NavTextProps = { children: React.ReactNode };
@@ -74,7 +45,6 @@ export const Contact: FC<Props> = (props: Props) => {
         <Heading m={2} fontSize={hfs}>
           コンタクト
         </Heading>
-        {/* <VStack h="110px" justify="center"> */}
         <VStack h="110px" justify="center">
           <Text fontWeight="semibold">お気軽にお問合せください</Text>
           {/*
@@ -101,29 +71,6 @@ export const Contact: FC<Props> = (props: Props) => {
           >
             <NavText>お問合せフォーム</NavText>
           </Button>
-          {/*
-          <Drawer
-            isOpen={isOpen}
-            size="full"
-            placement="bottom"
-            onClose={onClose}
-          >
-            <DrawerOverlay />
-            <DrawerContent>
-              <DrawerCloseButton />
-              <DrawerHeader>Create your account</DrawerHeader>
-              <DrawerBody>
-                <Input placeholder="Type here..." />
-              </DrawerBody>
-              <DrawerFooter>
-                <Button variant="outline" mr={3} onClick={onClose}>
-                  Cancel
-                </Button>
-                <Button colorScheme="blue">Save</Button>
-              </DrawerFooter>
-            </DrawerContent>
-          </Drawer>
-         */}
         </VStack>
       </VStack>
     </Box>

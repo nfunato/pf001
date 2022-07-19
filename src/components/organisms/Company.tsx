@@ -1,20 +1,6 @@
 import React from "react";
-import { Center, Heading } from "@chakra-ui/react";
-import {
-  VStack
-  //  Image
-} from "@chakra-ui/react";
-import {
-  Table,
-  // Thead,
-  // Tbody,
-  // Tfoot,
-  Tr,
-  Th,
-  Td,
-  // TableCaption,
-  TableContainer
-} from "@chakra-ui/react";
+import { VStack, Center, Heading } from "@chakra-ui/react";
+import { Table, Tr, Th, Td, TableContainer } from "@chakra-ui/react";
 import { hfs } from "../pages/Top";
 
 type Props = {

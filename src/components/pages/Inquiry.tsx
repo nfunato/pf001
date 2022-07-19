@@ -86,9 +86,6 @@ export const Inquiry: FC = () => {
     }
   }, [isSubmitSuccessful, reset]);
 
-  // <Flex justify="center" textAlign="center">
-  // <Box w="xl" p={6} borderRadius="10px" boxShadow="md" bg="white">
-  // form: style={{ paddingTop: "13%", backgroundColor: "#EEEEF0", height: "100vh" }}
   return (
     <form onSubmit={handleSubmit(onSubmitForm)}>
       <Box
